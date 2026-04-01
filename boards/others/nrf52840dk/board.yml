@@ -1,0 +1,5 @@
+board:
+  extend: nrf52840dk
+  variants:
+    - name: ca03
+      qualifier: nrf52840

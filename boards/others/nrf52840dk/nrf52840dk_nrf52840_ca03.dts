@@ -1,0 +1,29 @@
+/dts-v1/;
+#include <zephyr/dt-bindings/gpio/gpio.h>
+#include <nordic/nrf52840_qiaa.dtsi>
+
+/ {
+	model = "nRF52840DK CA03 variant (QFAA)";
+	compatible = "others,ca03";
+
+	leds {
+		compatible = "gpio-leds";
+
+		user_led0: led_0 {
+			gpios = <&gpio0 28 GPIO_ACTIVE_LOW>;
+			label = "User LED";
+		};
+	};
+
+	aliases {
+		led0 = &user_led0;
+	};
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+&gpiote {
+	status = "okay";
+};
